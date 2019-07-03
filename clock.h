@@ -14,13 +14,12 @@ public:
     clock();
     ~clock();
 
+    void check_time();
     uint8_t get_digit(uint8_t digit_index);
 
 private:
 
     uint8_t digits[4];
-
-    void check_time();
 
 };
 
