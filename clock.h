@@ -6,6 +6,8 @@
 #define CLOCK_CLOCK_H
 
 #include <stdint.h>
+#include <Wire.h>
+#include "RTClib.h"
 
 class clock {
 
@@ -15,11 +17,13 @@ public:
     ~clock();
 
     void check_time();
+    bool init();
     uint8_t get_digit(uint8_t digit_index);
 
 private:
 
     uint8_t digits[4];
+    RTC_DS1307 rtc;
 
 };
 

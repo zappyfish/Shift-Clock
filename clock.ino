@@ -1,5 +1,6 @@
 #include "shift.h"
 #include "clock.h"
+#include <Servo.h>
 
 #define NUM_DIGITS 4
 
@@ -17,7 +18,14 @@ shift myShifts[4] = {
 
 clock myClock;
 
+Servo on, off;
+
 void setup() {
+    myClock.init();
+    on.attach(5);
+    on.write(0);
+    off.attach(3);
+    off.write(90);
 }
 
 void loop() {
